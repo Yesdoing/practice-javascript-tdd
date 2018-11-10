@@ -1,5 +1,7 @@
-const lotto = {
-    numbers: [],
+const lotto = (function() {
+    const numbers = Symbol('numbers');
+    return ({
+    [numbers]: [],
     inputNumbers(inputNumbers) {
         this.numbers = inputNumbers;
     },
@@ -11,17 +13,20 @@ const lotto = {
     showNumber() {
         return this.numbers;
     }
-};
+});
+})();
 
-const ticket = {
-    lottos: [],
+const ticket = ( function () {
+    const lottos = Symbol('lottos');
+    return ({
+    [lottos]: [],
     buyTicket(money) {
         if(money < 1000) {
             throw Error('1000원 이상의 금액만 가능합니다.');
         }
         const count = money / 1000;
         for(let i=0; i<count; i++) {
-            this.lottos.push(lotto.create(this.createRandomNumbers()));
+            this[lottos].push(lotto.create(this.createRandomNumbers()));
         }
     },
     createRandomNumbers() {
@@ -33,9 +38,10 @@ const ticket = {
         return numbers.slice(0,7);
     },
     showTickets() {
-        console.log(this.lottos);
-        return this.lottos;
+        console.log(this[lottos]);
+        return this[lottos];
     }
-}
+});
+})();
 
 module.exports = { lotto, ticket };

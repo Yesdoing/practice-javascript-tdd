@@ -8,7 +8,7 @@ const { lotto, ticket } = require('../lotto');
 //     expect(lotto.numbers).toEqual([1,2,3,4,5,6]);
 // });
 
-test('create tikect', () => {
+test('create tikect', () => { 
 //    ticket.setLotto(lotto.create('1 2 3 4 5 6'));
  //   expect(ticket.getLotto()).toEqual([lotto.numbers]);
 });
