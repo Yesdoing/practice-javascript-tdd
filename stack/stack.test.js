@@ -10,7 +10,7 @@ beforeEach(()=> {
 });
 
 test('stack push', () => {
-    expect(stack.push(3)).toBe(3);
+    expect(stack.push(3)).toBe(2);
 });
 
 test('stack pop', () => {
