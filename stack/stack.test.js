@@ -2,7 +2,7 @@ const { Stack } = require('./stack');
 
 let stack;
 
-beforeEach(()=> {
+beforeAll(()=> {
     return (function() {
         stack = Object.assign({}, Stack);
         stack.push(3);    
