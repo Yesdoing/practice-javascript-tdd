@@ -9,7 +9,12 @@ const Stack = (function() {
             return this[Private].length;
         },
         pop: function() {
+            if(!this[Private].length) throw "Stack is empty";
             return this[Private].pop();
+        },
+        top: function() {
+            if(!this[Private].length) return -1;
+            return this[Private][this[Private].length-1];
         },
         size: function() {
             return this[Private].length;

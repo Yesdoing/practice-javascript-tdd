@@ -19,6 +19,8 @@ test('stack pop', () => {
 
 test('stack top', () => {
     expect(stack.top()).toBe(3);
+    stack.pop();
+    expect(stack.top()).toBe(-1);
 });
 
 test('stack empty', () => {
