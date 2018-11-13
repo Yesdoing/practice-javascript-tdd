@@ -3,7 +3,7 @@ const lotto = (function() {
     return ({
     [numbers]: [],
     inputNumbers(inputNumbers) {
-        this.numbers = inputNumbers;
+        this[numbers] = inputNumbers;
     },
     create: function (inputNumbers) {
         const lotto = Object.assign({}, this);
@@ -11,7 +11,7 @@ const lotto = (function() {
         return lotto;
     },
     showNumber() {
-        return this.numbers;
+        return this[numbers];
     }
 });
 })();
@@ -35,10 +35,10 @@ const ticket = ( function () {
             numbers.push(i);
         }
         numbers.sort(()=> Math.random() - 0.5);
-        return numbers.slice(0,7);
+        return numbers.slice(0,6);
     },
     showTickets() {
-        console.log(this[lottos]);
+        console.log(this[lottos].map( a => a.showNumber() ));
         return this[lottos];
     }
 });
