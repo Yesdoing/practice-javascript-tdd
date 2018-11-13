@@ -16,6 +16,10 @@ const Stack = (function() {
             if(!this[Private].length) return -1;
             return this[Private][this[Private].length-1];
         },
+        empty: function() {
+            if(!this[Private].length) return true;
+            else return false;
+        },
         size: function() {
             return this[Private].length;
         }

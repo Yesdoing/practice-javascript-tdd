@@ -24,7 +24,7 @@ test('stack top', () => {
 });
 
 test('stack empty', () => {
-    expect(stack.empty()).not.toBeNull();
-    stack.pop();
-    expect(stack.empty()).toBeNull();
+    expect(stack.empty()).toBeTruthy();
+    stack.push(3);
+    expect(stack.empty()).toBeFalsy();
 });
